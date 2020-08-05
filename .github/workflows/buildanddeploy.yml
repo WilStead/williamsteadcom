@@ -11,6 +11,7 @@ on:
 
 env:
     HUGO_VERSION: 0.74.3
+    BASE_URL: https://williamstead.com
     AZURE_STORAGE_ACCOUNT: williamsteadcomstorage
 
 jobs:
@@ -28,6 +29,8 @@ jobs:
               run: "wget https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.deb -O hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.deb"
             - name: Install Hugo
               run: sudo dpkg -i hugo*.deb
+            - name: Build
+              run: hugo --baseUrl '${{ env.BASE_URL }}'
             - name: Deploy to Azure blob
               run: hugo deploy --maxDeletes -1
               env:
