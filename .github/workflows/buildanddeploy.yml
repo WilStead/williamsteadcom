@@ -4,10 +4,10 @@ defaults:
     run:
         shell: bash
 
-#on:
-#    push:
-#        branches:
-#            - master
+on:
+    push:
+        branches:
+            - master
 
 env:
     HUGO_VERSION: 0.74.3
@@ -32,4 +32,4 @@ jobs:
               run: hugo deploy --maxDeletes -1
               env:
                   AZURE_STORAGE_ACCOUNT: ${{ env.AZURE_STORAGE_ACCOUNT }}
-                  AZURE_STORAGE_KEY: ${{ secrets.LIVE_AZURE_STORAGE_KEY }}
+                  AZURE_STORAGE_KEY: ${{ secrets.AZURE_STORAGE_KEY }}
