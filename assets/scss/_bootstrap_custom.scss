@@ -1,0 +1,44 @@
+﻿$warning: #e4ab00;
+$primary: #0878d6;
+$secondary: #82BEF2;
+$tertiary: #b0e6e8;
+$dim: #2A8389;
+$light: #fef9fd;
+$dark: #0C2426;
+
+$body-bg: $light;
+$body-color: $dark;
+
+$link-hover-color: $secondary;
+$link-hover-decoration: none;
+
+$font-size-base: 1rem;
+$font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$headings-font-family: "Open Sans Condensed", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$headings-font-weight: 700;
+
+$table-border-width: 0;
+
+$navbar-light-color: $primary;
+$navbar-light-hover-color: $link-hover-color;
+$navbar-light-active-color: $link-hover-color;
+
+$card-border-width: 0;
+$card-bg: $tertiary;
+$card-cap-bg: $secondary;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$theme-colors: (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark,
+    "tertiary":   $tertiary,
+    "dim":        $dim
+);

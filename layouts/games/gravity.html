@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main role="main" class="container-fluid d-flex flex-column flex-nowrap">
+    {{ .Content }}
+</main>
+{{ end }}
+{{ define "scripts" }}
+    {{- $vector := resources.Get "js/gravity/vector.js" | minify -}}
+    {{- $javascript_vector := slice $vector | resources.Concat "js/gravity/vector.js" -}}
+    <script type="module" src="{{ $javascript_vector.RelPermalink }}"></script>
+    {{- $particle := resources.Get "js/gravity/particle.js" | minify -}}
+    {{- $javascript_particle := slice $particle | resources.Concat "js/gravity/particle.js" -}}
+    <script type="module" src="{{ $javascript_particle.RelPermalink }}"></script>
+    {{- $universe := resources.Get "js/gravity/universe.js" | minify -}}
+    {{- $javascript_universe := slice $universe | resources.Concat "js/gravity/universe.js" -}}
+    <script type="module" src="{{ $javascript_universe.RelPermalink }}"></script>
+{{ end }}

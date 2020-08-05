@@ -1,0 +1,53 @@
+---
+title: Sermon Calculator
+linktitle: Sermon Calculator
+menu:
+    main:
+        name: Sermon Calculator
+        title: Sermon Calculator
+---
+<section class="row section tertiary pb-3">
+    <div class="card card-background text-light">
+        <div class="card-img-overlay page-heading">
+            <h1 class="card-title"><span>Sermon Calculator</span></h1>
+            <div class="d-flex flex-column flex-grow-1 w-100">
+                <p id="sermon-instructions" class="pb-2">Paste your sermon here to test its reading time:</p>
+                <textarea id="sermon-text" class="flex-grow-1 mb-3" style="width: 100%;" aria-labelledby="sermon-instructions"></textarea>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="row pt-2">
+    <div class="col-10 offset-1 col-md-auto">
+        <p>
+            This sermon will take <span class="text-primary" style="font-size: larger;"><span id="sermon-minutes" style="font-size: x-large;">0</span> minutes</span> to deliver
+            <span class="text-dim" style="display: inline-block;">
+                <span>(at</span>
+                <input id="sermon-wpm" class="blues text-center" style="width: 4em;" type="number" aria-labelledby="wpm-label" placeholder="130" step="10" size="3" />
+                <span id="wpm-label">words per minute)</span>
+            </span>.
+        </p>
+    </div>
+    <div class="col-10 offset-1 col-md offset-md-0 pr-3 text-success d-flex justify-content-end align-items-baseline">
+        <span>Store this sermon's time and test another one:</span>
+        <button id="save-sermon" type="button" class="btn btn-success ml-2">Save</button>
+    </div>
+    <div class="col-1"></div>
+</section>
+<section class="row">
+    <div class="col-10 offset-1 col-md-auto mt-2 text-dim">
+        <p class="mb-0">Stored sermon times:</p>
+        <ul id="sermonTimingList" class="mx-3"></ul>
+    </div>
+    <div class="col-10 offset-1 col-md offset-md-0 mt-2">
+        <p>
+            Average reading time of all tested sermons:
+            <span class="text-primary minute-text"><span id="sermon-average" style="font-size: x-large;">0</span> minutes</span>.
+        </p>
+        <div class="text-warning d-flex align-items-baseline pr-3">
+            <span>Clear stored sermons:</span>
+            <button id="clear-sermons" type="button" class="btn btn-warning ml-2">Clear</button>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</section>

@@ -1,0 +1,350 @@
+﻿@import "_bootstrap_custom";
+
+/*! purgecss start ignore */
+html {
+    height: 100%;
+    position: relative;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    min-height: 100%;
+}
+
+app {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+}
+
+main {
+    flex-grow: 1;
+    margin: auto;
+    margin-top: 77px;
+    z-index: 1;
+}
+
+a {
+    transition: color .2s ease-in-out;
+}
+
+#main-navbar {
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    transition: padding-top ease-in-out .5s, padding-bottom ease-in-out .5s;
+}
+
+.section {
+    flex-direction: column;
+    padding-top: ($spacer * 3);
+    padding-bottom: ($spacer * 3);
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+        text-align: center;
+    }
+}
+
+.header-consensed {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.footer {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    height: 3.5em;
+    line-height: 3.5em;
+
+    a {
+        transition: color .2s;
+        text-decoration: none;
+    }
+}
+
+#toTop {
+    background-color: $tertiary;
+    background-color: rgba(102, 202, 210, 0.8);
+    color: $light;
+    line-height: normal;
+    position: fixed;
+    right: 2em;
+    bottom: 6.25em;
+    z-index: 251;
+    padding: .3em 1em;
+    border: 1px solid rgb(225, 225, 225);
+    border: 1px solid rgba(0, 0, 0, .1);
+    font-size: 1.2em;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    box-shadow: 0 0 1px rgba(255, 255, 255, .1) inset;
+    transition: all .5s ease-in-out;
+    vertical-align: bottom;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.table td {
+    border-top-width: 1px;
+    border-top-color: rgb(221, 221, 221);
+    border-top-color: rgba(221, 221, 221, 0.25);
+}
+
+.table-left-heading {
+    td:first-child {
+        text-align: right;
+    }
+
+    td:nth-child(2) {
+        vertical-align: middle;
+        width: .1%;
+
+        &::before {
+            content: ':|:';
+        }
+    }
+}
+
+.tertiary {
+    background-color: $tertiary !important;
+    color: $dim !important;
+
+    .table {
+        color: $dim !important;
+    }
+
+    .table td {
+        border-top-width: 1px;
+        border-top-color: color-level($tertiary, 2) !important;
+        border-top-color: rgba(42, 131, 137, 0.25) !important;
+    }
+}
+
+.inverse {
+    color: $light !important;
+    background-color: $dim !important;
+
+    a {
+        color: $secondary !important;
+
+        &:hover {
+            color: color-level($secondary, -4) !important;
+        }
+    }
+
+    .table {
+        color: $light !important;
+    }
+}
+
+.navbar-light .navbar-text {
+    a {
+        color: $navbar-light-color;
+    }
+}
+
+#site-title {
+    text-transform: uppercase;
+    text-decoration: none;
+
+    span:first-child {
+        width: 1.2em;
+        margin-right: .1em;
+        text-align: center;
+        background-color: $secondary;
+        color: $light;
+        display: inline-block;
+    }
+}
+
+.page-heading {
+    text-align: center;
+    justify-content: center;
+    margin-top: .5em;
+    margin-bottom: .25em;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+    flex-basis: auto;
+
+    h1 {
+        font-size: $h2-font-size;
+        text-transform: none;
+    }
+
+    p {
+        font-family: $headings-font-family;
+        font-size: $h3-font-size;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+}
+
+.card-background {
+    border-radius: 0;
+    height: 400px;
+    overflow: hidden;
+
+    img {
+        left: 50%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.5;
+        width: 100%;
+    }
+
+    .card-img-overlay {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.card-icon {
+    font-size: 5em;
+}
+
+#gravity-canvas-container {
+    position: relative;
+    background: black;
+    color: white;
+
+    #gravity-canvas {
+        position: absolute;
+        left: 0;
+    }
+
+    #gravity-info {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+
+        p {
+            margin: 2px;
+        }
+    }
+}
+
+.minesweeper-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 4rem;
+}
+
+.minesweeper-count {
+    background-color: black;
+    color: red;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 36px;
+    line-height: 27px;
+}
+
+#minesweeper-face {
+    background-color: gray;
+    border: 1px solid black;
+    box-shadow: inset 2px 2px 2px rgba(255,255,255,.4), inset -2px -2px 2px rgba(0,0,0,.4);
+    color: black;
+    height: 27px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+    user-select: none;
+    width: 27px;
+
+    &::after {
+        content: '\01F642';
+    }
+
+    .gameover &::after {
+        content: '\02639';
+    }
+
+    .win &::after {
+        content: '\01F60E';
+    }
+}
+
+.minesweeper-playingfield {
+    display: grid;
+    flex-grow: 1;
+    place-items: center;
+}
+
+.minesweeper-restartarea {
+    align-items: center;
+    display: flex;
+    min-height: 4rem;
+    justify-content: center;
+
+    button {
+        margin-left: .5rem;
+        margin-right: .5rem;
+    }
+}
+
+#minesweeper-gameboard {
+    border-collapse: collapse;
+    font-weight: bold;
+}
+
+.minesquare {
+    background-color: gray;
+    border: 1px solid black;
+    box-shadow: inset 2px 2px 2px rgba(255,255,255,.4), inset -2px -2px 2px rgba(0,0,0,.4);
+    color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    font-size: 0;
+    height: 27px;
+    text-align: center;
+    user-select: none;
+    width: 27px;
+}
+
+.minesquare.revealed {
+    background-color: lightgray;
+    box-shadow: none;
+    color: black;
+    font-size: initial;
+}
+
+.gameover .minesquare {
+    &.flagged:not(.mined) {
+        background-color: darkred;
+
+        &::after {
+            content: none;
+        }
+    }
+
+    &.mined {
+        color: black;
+    }
+}
+
+.minesquare.revealed.mined {
+    background-color: red;
+}
+
+.minesquare.revealed.mines-1 { color: blue; }
+.minesquare.revealed.mines-2 { color: green; }
+.minesquare.revealed.mines-3 { color: red; }
+.minesquare.revealed.mines-4 { color: purple; }
+.minesquare.revealed.mines-5 { color: maroon; }
+.minesquare.revealed.mines-6 { color: lightseagreen; }
+.minesquare.revealed.mines-7 { color: black; }
+.minesquare.revealed.mines-8 { color: dimgray; }
+
+.minesquare.flagged::after {
+    color: black;
+    content: "\01F6A9";
+    font-size: initial;
+}
+/*! purgecss end ignore */

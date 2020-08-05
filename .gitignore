@@ -1,0 +1,13 @@
+# Hugo output and intermediate build
+/public
+/resources
+
+# Node.js
+node_modules/
+
+## OS Files
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/

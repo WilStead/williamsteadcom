@@ -1,0 +1,28 @@
+---
+title: Minesweeper
+linktitle: Minesweeper
+menu:
+    main:
+        name: Minesweeper
+        title: Minesweeper
+        parent: Games
+layout: minesweeper
+---
+<section class="row page-heading">
+    <h1 class="text-dim">Minesweeper</h1>
+</section>
+<section id="minesweeper-game" class="row inverse text-center flex-column flex-grow-1">
+    <div class="minesweeper-header">
+        <span id="minesweeper-unflagged" class="minesweeper-count"></span>
+        <span id="minesweeper-face"></span>
+        <span id="minesweeper-flagged" class="minesweeper-count"></span>
+    </div>
+    <div class="minesweeper-playingfield">
+        <table id="minesweeper-gameboard"></table>
+    </div>
+    <div class="minesweeper-restartarea">
+        <button id="minesweeper-smallbutton" class="btn btn-primary">Small</button>
+        <button id="minesweeper-mediumbutton" class="btn btn-primary">Medium</button>
+        <button id="minesweeper-largebutton" class="btn btn-primary">Large</button>
+    </div>
+</section>
