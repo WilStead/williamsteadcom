@@ -1,6 +1,5 @@
 # Hugo output and intermediate build
 /public
-/resources
 
 # Node.js
 node_modules/**
