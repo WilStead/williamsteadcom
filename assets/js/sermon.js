@@ -54,7 +54,7 @@ window.addEventListener('load', function (_ev) {
     const save = document.getElementById('save-sermon');
     const clear = document.getElementById('clear-sermons');
     const list = document.getElementById('sermonTimingList');
-    sermonText.addEventListener('change', function (ev) {
+    sermonText.addEventListener('input', function (ev) {
         calc.sermonText = this.value;
         let min = calc.minutes();
         sermonMinutes.textContent = min.toFixed(0);

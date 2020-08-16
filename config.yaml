@@ -1,6 +1,7 @@
 baseURL: https://williamstead.com/
 languageCode: en-us
 title: Wil Stead
+disablePathToLower: true
 
 menu: main
 

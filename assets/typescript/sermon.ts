@@ -75,7 +75,7 @@ window.addEventListener('load', function (this: Window, _ev: Event) {
     const clear = document.getElementById('clear-sermons') as HTMLButtonElement;
     const list = document.getElementById('sermonTimingList') as HTMLUListElement;
 
-    sermonText.addEventListener('change', function (this: HTMLTextAreaElement, ev: Event) {
+    sermonText.addEventListener('input', function (this: HTMLTextAreaElement, ev: Event) {
         calc.sermonText = this.value;
         let min = calc.minutes();
         sermonMinutes.textContent = min.toFixed(0);

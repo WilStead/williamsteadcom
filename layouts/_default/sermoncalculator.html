@@ -1,0 +1,10 @@
+{{ define "main" }}
+<main role="main" class="container-fluid">
+    {{ .Content }}
+</main>
+{{ end }}
+{{ define "scripts" }}
+    {{- $sermon := resources.Get "js/sermon.js" | minify -}}
+    {{- $javascript := slice $sermon | resources.Concat "js/sermon.js" -}}
+    <script type="module" src="{{ $javascript.RelPermalink }}"></script>
+{{ end }}
