@@ -1,0 +1,136 @@
+/* /Pages/Games/Minesweeper.razor.rz.scp.css */
+.minesweeper-header[b-c8f3g9gfvg] {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 4rem;
+}
+.minesweeper-count[b-c8f3g9gfvg] {
+    background-color: black;
+    color: red;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 36px;
+    line-height: 27px;
+}
+#minesweeper-face[b-c8f3g9gfvg] {
+    background-color: gray;
+    border: 1px solid black;
+    box-shadow: inset 2px 2px 2px rgba(255,255,255,.4), inset -2px -2px 2px rgba(0,0,0,.4);
+    color: black;
+    cursor: pointer;
+    height: 27px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+    user-select: none;
+    width: 27px;
+}
+    #minesweeper-face[b-c8f3g9gfvg]:after {
+        content: '\01F642';
+    }
+    .gameover #minesweeper-face[b-c8f3g9gfvg]:after {
+        content: '\02639';
+    }
+    .win #minesweeper-face[b-c8f3g9gfvg]:after {
+        content: '\01F60E';
+    }
+.minesweeper-playingfield[b-c8f3g9gfvg] {
+    display: grid;
+    flex-grow: 1;
+    place-items: center;
+}
+#minesweeper-gameboard[b-c8f3g9gfvg] {
+    border-collapse: collapse;
+    font-weight: bold;
+}
+.minesquare[b-c8f3g9gfvg] {
+    background-color: gray;
+    border: 1px solid black;
+    box-shadow: inset 2px 2px 2px rgba(255,255,255,.4), inset -2px -2px 2px rgba(0,0,0,.4);
+    color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    font-size: 0;
+    height: 27px;
+    text-align: center;
+    user-select: none;
+    width: 27px;
+}
+    .minesquare.revealed[b-c8f3g9gfvg] {
+        background-color: lightgray;
+        box-shadow: none;
+        color: black;
+        font-size: initial;
+    }
+.gameover .minesquare[b-c8f3g9gfvg],
+.win .minesquare[b-c8f3g9gfvg] {
+    cursor: initial;
+}
+.gameover .minesquare.flagged:not(.mined)[b-c8f3g9gfvg] {
+    background-color: darkred;
+}
+    .gameover .minesquare.flagged:not(.mined)[b-c8f3g9gfvg]:after {
+        content: none;
+    }
+.gameover .minesquare.mined[b-c8f3g9gfvg] {
+    color: black;
+}
+.minesquare.revealed.mined[b-c8f3g9gfvg] {
+    background-color: red;
+}
+.minesquare.revealed.mines-1[b-c8f3g9gfvg] { color: blue; }
+.minesquare.revealed.mines-2[b-c8f3g9gfvg] { color: green; }
+.minesquare.revealed.mines-3[b-c8f3g9gfvg] { color: red; }
+.minesquare.revealed.mines-4[b-c8f3g9gfvg] { color: purple; }
+.minesquare.revealed.mines-5[b-c8f3g9gfvg] { color: maroon; }
+.minesquare.revealed.mines-6[b-c8f3g9gfvg] { color: lightseagreen; }
+.minesquare.revealed.mines-7[b-c8f3g9gfvg] { color: black; }
+.minesquare.revealed.mines-8[b-c8f3g9gfvg] { color: dimgray; }
+.minesquare.flagged[b-c8f3g9gfvg]::after {
+    color: black;
+    content: "\01F6A9";
+    font-size: initial;
+}
+/* /Pages/Index.razor.rz.scp.css */
+.roller[b-s0uol9awb3] {
+    --line-height: 2em;
+    display: flex;
+    height: calc(3 * var(--line-height));
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0) 10%, rgba(0,0,0,.3) 25%, rgba(0,0,0,1) 33%, rgba(0,0,0,1) 67%, rgba(0,0,0,.3) 75%, rgba(0,0,0,0) 90%, rgba(0,0,0,0));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+    .roller div[b-s0uol9awb3] {
+        align-self: center;
+        display: flex;
+        height: var(--line-height);
+    }
+        .roller div p[b-s0uol9awb3] {
+            margin: 0;
+        }
+    .roller ul[b-s0uol9awb3] {
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+    }
+    .roller p[b-s0uol9awb3],
+    .roller ul[b-s0uol9awb3],
+    .roller li[b-s0uol9awb3] {
+        line-height: var(--line-height);
+    }
+    .roller li[b-s0uol9awb3]:before {
+        content: "\a0";
+    }
+    .roller ul[b-s0uol9awb3] {
+        list-style: none;
+        padding: 0;
+    }
+    .roller .roll[b-s0uol9awb3] {
+        animation: scroll-b-s0uol9awb3 10s linear 0s infinite;
+    }
+@keyframes scroll-b-s0uol9awb3 {
+    from {
+        transform: translateY(calc(-1 * var(--line-height)))
+    }
+    to {
+        transform: translateY(calc(-5 * var(--line-height)))
+    }
+}
