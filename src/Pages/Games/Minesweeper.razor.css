@@ -1,0 +1,91 @@
+﻿.minesweeper-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 4rem;
+}
+.minesweeper-count {
+    background-color: black;
+    color: red;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 36px;
+    line-height: 27px;
+}
+#minesweeper-face {
+    background-color: gray;
+    border: 1px solid black;
+    box-shadow: inset 2px 2px 2px rgba(255,255,255,.4), inset -2px -2px 2px rgba(0,0,0,.4);
+    color: black;
+    cursor: pointer;
+    height: 27px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+    user-select: none;
+    width: 27px;
+}
+    #minesweeper-face:after {
+        content: '\01F642';
+    }
+    .gameover #minesweeper-face:after {
+        content: '\02639';
+    }
+    .win #minesweeper-face:after {
+        content: '\01F60E';
+    }
+.minesweeper-playingfield {
+    display: grid;
+    flex-grow: 1;
+    place-items: center;
+}
+#minesweeper-gameboard {
+    border-collapse: collapse;
+    font-weight: bold;
+}
+.minesquare {
+    background-color: gray;
+    border: 1px solid black;
+    box-shadow: inset 2px 2px 2px rgba(255,255,255,.4), inset -2px -2px 2px rgba(0,0,0,.4);
+    color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    font-size: 0;
+    height: 27px;
+    text-align: center;
+    user-select: none;
+    width: 27px;
+}
+    .minesquare.revealed {
+        background-color: lightgray;
+        box-shadow: none;
+        color: black;
+        font-size: initial;
+    }
+.gameover .minesquare,
+.win .minesquare {
+    cursor: initial;
+}
+.gameover .minesquare.flagged:not(.mined) {
+    background-color: darkred;
+}
+    .gameover .minesquare.flagged:not(.mined):after {
+        content: none;
+    }
+.gameover .minesquare.mined {
+    color: black;
+}
+.minesquare.revealed.mined {
+    background-color: red;
+}
+.minesquare.revealed.mines-1 { color: blue; }
+.minesquare.revealed.mines-2 { color: green; }
+.minesquare.revealed.mines-3 { color: red; }
+.minesquare.revealed.mines-4 { color: purple; }
+.minesquare.revealed.mines-5 { color: maroon; }
+.minesquare.revealed.mines-6 { color: lightseagreen; }
+.minesquare.revealed.mines-7 { color: black; }
+.minesquare.revealed.mines-8 { color: dimgray; }
+.minesquare.flagged::after {
+    color: black;
+    content: "\01F6A9";
+    font-size: initial;
+}

@@ -1,0 +1,13 @@
+﻿@inherits LayoutComponentBase
+
+<FrameworkLayout ThemeColor="ThemeColor.Primary">
+    <FrameworkContent>
+        <TopAppbar />
+    </FrameworkContent>
+    <ChildContent>
+        @Body
+        <footer class="d-flex align-self-center flex-wrap mt-auto mx-6 pt-4 px-4 pb-1 gap-3 justify-content-space-around">
+            <small>© 2018-@(DateTime.Now.Year) <a href="mailto:wil.stead@williamstead.com">Wil Stead</a></small>
+        </footer>
+    </ChildContent>
+</FrameworkLayout>

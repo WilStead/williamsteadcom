@@ -1,0 +1,39 @@
+﻿@page "/sermoncalculator"
+
+<PageTitle>Sermon Calculator</PageTitle>
+
+<div class="container-fixed">
+    <h1>Sermon Calculator</h1>
+
+    <p>Paste your sermon below to test its reading time:</p>
+    <TextArea Label="Sermon"
+              Value="@SermonText"
+              ValueChanged="OnTextChanged"
+              Rows="5"
+              Class="align-self-stretch" />
+    <NumericInput Label="Words per minute"
+                  TValue="int"
+                  Value="WordsPerMinute"
+                  ValueChanged="OnWordsPerMinuteChanged"
+                  Min="10"
+                  Step="10" />
+    @if (WordCount > 0)
+    {
+        <p class="mt-5">Your sermon will take approximately @(ReadingTime.ToString("N0")) minutes to deliver.</p>
+        <p>You can save this sermon's reading time:</p>
+        <button class="btn primary" @onclick="OnSaveAsync">save time</button>
+    }
+    @if (Sermons.Count > 0)
+    {
+        <p>Saved times:</p>
+        <ul class="bullets">
+            @foreach (var (lead, wordCount) in Sermons)
+            {
+                <li>@(wordCount / WordsPerMinute).ToString("N0") min., "@lead"</li>
+            }
+        </ul>
+        <p>Average: @Sermons.Average(x => x.WordCount / WordsPerMinute).ToString("N0") minutes.</p>
+        <p class="mt-4">You can clear the saved times to start over:</p>
+        <button class="btn danger" @onclick="OnClearAsync">clear times</button>
+    }
+</div>

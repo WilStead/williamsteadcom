@@ -1,0 +1,54 @@
+﻿@page "/games/minesweeper"
+
+<div class="d-flex flex-column align-items-center align-self-stretch">
+    <h1>Minesweeper</h1>
+
+    <div class="@GetGameClass()">
+        <div class="minesweeper-header">
+            <span class="minesweeper-count">@(Math.Max(0, MineCount - FlagCount).ToString("000"))</span>
+            <span id="minesweeper-face" @onclick="OnStart"></span>
+            <span class="minesweeper-count">@GameClock</span>
+        </div>
+        <div class="minesweeper-playingfield">
+            <table id="minesweeper-gameboard">
+                @for (var yV = 0; yV < YRange; yV++)
+                {
+                    var y = yV;
+                    <tr>
+                        @for (var xV = 0; xV < XRange; xV++)
+                        {
+                            var x = xV;
+                            var square = Squares[x][y];
+                            <td class="@GetSquareClass(square)"
+                                @onclick="@(e => OnClickSquare(square, e))"
+                                @oncontextmenu="@(_ => OnContextSquare(square))"
+                                @oncontextmenu:preventDefault="true"
+                                @oncontextmenu:stopPropagation="true">
+                                @if (Squares[x][y].IsRevealed)
+                                {
+                                    if (Squares[x][y].HasMine)
+                                    {
+                                        <span>💣</span>
+                                    }
+                                    else if (Squares[x][y].MinedNeighbors > 0)
+                                    {
+                                        <span>@Squares[x][y].MinedNeighbors</span>
+                                    }
+                                }
+                                else if (GameOver && Squares[x][y].HasMine)
+                                {
+                                    <span>💣</span>
+                                }
+                            </td>
+                        }
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="d-flex center-items gap-2 mt-3">
+            <button class="btn primary" @onclick="@(_ => OnSetSize(0))">Small</button>
+            <button class="btn primary" @onclick="@(_ => OnSetSize(1))">Medium</button>
+            <button class="btn primary" @onclick="@(_ => OnSetSize(2))">Large</button>
+        </div>
+    </div>
+</div>
