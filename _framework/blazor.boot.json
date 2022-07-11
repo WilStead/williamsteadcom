@@ -62,9 +62,9 @@
       "System.Text.Json.dll": "sha256-y8eBsOCxNy0meHNyGGfOS2bJtBsUyw6tEXeN7fglEmI=",
       "System.Text.RegularExpressions.dll": "sha256-nuVTINZudlCH9AhfF5ASGOxnioaY3e6\/+ui2qnHuVSQ=",
       "System.Threading.dll": "sha256-HRyxnlFQxxUN8u3iaOg7yisGro63ADiEbLPpAi\/bh3I=",
-      "Tavenem.Blazor.Framework.dll": "sha256-wQFzbbFLMh4gIaY0WeueGWygJzyPz76FilDE3q0O+eI=",
+      "Tavenem.Blazor.Framework.dll": "sha256-hHDcYjH0fq5KjPCnA\/xXVMXx8R4FG4MMG6uamgwoFX4=",
       "Tavenem.Blazor.IndexedDB.dll": "sha256-jfa35G3Zjcj5LFWsgIaWO1AP5oq8YugZKOSA6SlHwXQ=",
-      "williamsteadcom.dll": "sha256-Fi2zONDXkIxPZKOhEQ7r0sxOjTeIGxC8myizexeI5vg="
+      "williamsteadcom.dll": "sha256-9jXXqwWAM3y6XzZiqgUkKmip9+oiCgNBXOH10\/ie068="
     },
     "extensions": null,
     "lazyAssembly": null,
