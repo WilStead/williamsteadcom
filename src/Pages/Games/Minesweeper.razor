@@ -3,7 +3,7 @@
 <div class="d-flex flex-column align-items-center align-self-stretch">
     <h1>Minesweeper</h1>
 
-    <div class="@GetGameClass()">
+    <div class="@GetGameClass()" style="max-width:calc(100vw - 2rem)">
         <div class="minesweeper-header">
             <span class="minesweeper-count">@(Math.Max(0, MineCount - FlagCount).ToString("000"))</span>
             <span id="minesweeper-face" @onclick="OnStart"></span>

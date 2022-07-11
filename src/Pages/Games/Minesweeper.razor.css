@@ -36,6 +36,8 @@
 .minesweeper-playingfield {
     display: grid;
     flex-grow: 1;
+    max-width: calc(100vw - 2rem);
+    overflow: auto;
     place-items: center;
 }
 #minesweeper-gameboard {
@@ -50,6 +52,7 @@
     cursor: pointer;
     font-size: 0;
     height: 27px;
+    min-width: 27px;
     text-align: center;
     user-select: none;
     width: 27px;
