@@ -94,6 +94,26 @@
     font-size: initial;
 }
 /* /Pages/Index.razor.rz.scp.css */
+.parallax[b-s0uol9awb3] {
+    contain: paint;
+    display: grid;
+    grid-template-areas: "stack";
+}
+
+.backdrop[b-s0uol9awb3] {
+    --parallax-speed: 2;
+    grid-area: stack;
+    animation: parallax-b-s0uol9awb3 linear;
+    animation-timeline: scroll();
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion) {
+    .backdrop[b-s0uol9awb3] {
+        --parallax-speed: 0;
+    }
+}
+
 .roller[b-s0uol9awb3] {
     --line-height: 1em;
     display: flex;
@@ -103,28 +123,33 @@
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0) 10%, rgba(0,0,0,.3) 25%, rgba(0,0,0,1) 33%, rgba(0,0,0,1) 67%, rgba(0,0,0,.3) 75%, rgba(0,0,0,0) 90%, rgba(0,0,0,0));
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
+
     .roller div[b-s0uol9awb3] {
         align-self: center;
         display: flex;
         gap: 1ch;
         height: var(--line-height);
     }
+
         .roller div p[b-s0uol9awb3] {
             align-self: center;
             flex: 1 0 auto;
             margin: 0;
             text-align: end;
         }
+
     .roller ul[b-s0uol9awb3] {
         margin-block-start: 0px;
         margin-block-end: 0px;
     }
+
     .roller p[b-s0uol9awb3],
     .roller ul[b-s0uol9awb3],
     .roller li[b-s0uol9awb3] {
         font-weight: bold;
         line-height: var(--line-height);
     }
+
     .roller li[b-s0uol9awb3] {
         align-items: center;
         display: flex;
@@ -132,24 +157,36 @@
         margin-top: .25em;
         min-height: calc(2 * var(--line-height));
     }
-    .roller li:first-child[b-s0uol9awb3] {
-        margin-top: 0;
-    }
-    .roller li:last-child[b-s0uol9awb3] {
-        margin-bottom: 0;
-    }
+
+        .roller li:first-child[b-s0uol9awb3] {
+            margin-top: 0;
+        }
+
+        .roller li:last-child[b-s0uol9awb3] {
+            margin-bottom: 0;
+        }
+
     .roller ul[b-s0uol9awb3] {
         list-style: none;
         padding: 0;
     }
+
     .roller .roll[b-s0uol9awb3] {
         animation: scroll-b-s0uol9awb3 10s linear 0s infinite;
     }
+
 @keyframes scroll-b-s0uol9awb3 {
     from {
         transform: translateY(calc(-1.625 * var(--line-height)));
     }
+
     to {
         transform: translateY(calc(-10.625 * var(--line-height)));
+    }
+}
+
+@keyframes parallax-b-s0uol9awb3 {
+    to {
+        transform: translateY(calc(var(--parallax-speed) * 200px));
     }
 }
